@@ -29,5 +29,5 @@ const myFunction = function(){
     
 }
 
-console.log(typeOf bigNumber);
+console.log(typeof bigNumber);
 
