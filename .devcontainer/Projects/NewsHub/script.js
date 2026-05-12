@@ -8,10 +8,27 @@ function reload() {
 }
 
 async function fetchNews(query) {
-  const res = await fetch(`${url}${query}&apiKey=${API_KEY}`);
-  const data = await res.json();
-  // console.log(data.articles)
-  bindData(data.articles);
+
+  try {
+
+    const res = await fetch(`${url}${query}&apiKey=${API_KEY}`);
+
+    const data = await res.json();
+
+    console.log(data);
+
+    if (data.status !== "ok") {
+      console.log("API ERROR");
+      return;
+    }
+
+    bindData(data.articles);
+
+  } catch (error) {
+
+    console.log("Fetch Error:", error);
+
+  }
 }
 
 function bindData(articles) {
@@ -51,12 +68,13 @@ function fillDataInCard(cardClone, article) {
 }
 
 let curSelectedNav = null;
-function onNavItemClick(id) {
+function onNavItemClick(id){
   fetchNews(id);
   const navItem = document.getElementById(id);
-  curSelectedNav?.classList.remove("active");
+  curSelectedNav?.classList.remove('active');
   curSelectedNav = navItem;
-  curSelectedNav.classList.add("active");
+  curSelectedNav.classList.add('active');
+
 }
 
 const searchButton = document.getElementById("search-button");

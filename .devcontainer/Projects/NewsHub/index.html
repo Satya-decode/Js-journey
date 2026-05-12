@@ -17,21 +17,21 @@
             <li
               class="hover-link nav-item"
               id="ipl"
-              onClick="onNavItemClick('ipl')"
+              onclick="onNavItemClick('ipl')"
             >
               IPL
             </li>
             <li
               class="hover-link nav-item"
               id="finance"
-              onClick="onNavItemClick('finance')"
+              onclick="onNavItemClick('finance')"
             >
               Finance
             </li>
             <li
               class="hover-link nav-item"
               id="politics"
-              onClick="onNavItemClick('politics')"
+              onclick="onNavItemClick('politics')"
             >
               Politics
             </li>
@@ -49,22 +49,30 @@
       </div>
     </nav>
 
-    <main>
-      <div class="cards-container container flex" id="cards-container">
-        <template id="template-news-card">
-          <div class="card">
+   <main>
+
+    <div class="cards-container container flex" id="cards-container">
+    </div>
+
+    <template id="template-news-card">
+
+        <div class="card">
+
             <div class="card-header">
-              <img src="" alt="news-image" id="news-img" />
+                <img src="" alt="news-image" id="news-img" />
             </div>
+
             <div class="card-content">
-              <h3 id="news-title"></h3>
-              <h6 id="news-source"></h6>
-              <p class="news-desc" id="news-desc"></p>
+                <h3 id="news-title"></h3>
+                <h6 id="news-source"></h6>
+                <p class="news-desc" id="news-desc"></p>
             </div>
-          </div>
-        </template>
-      </div>
-    </main>
+
+        </div>
+
+    </template>
+
+</main>
 
     <script src="script.js"></script>
   </body>

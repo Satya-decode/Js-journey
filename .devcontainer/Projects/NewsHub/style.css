@@ -82,7 +82,7 @@ nav {
   color: red;
 }
 
-.active {
+.navItem{
   color: var(--accent-color);
 }
 
